@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Etiquetas Open Graph para vista previa en WhatsApp -->
+    <meta property="og:title" content="Invitación Boda de Verónica & Omar 💍">
+    <meta property="og:description" content="Nos haría muy felices que nos acompañes a celebrar el inicio de este nuevo capítulo juntos. Conoce los detalles aquí.">
+    <meta property="og:image" content="https://res.cloudinary.com/dpswlduf5/image/upload/v1782713684/IMG-20260628-WA0010_gjuffk.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://tuweb.com"> <!-- REEMPLAZAR POR LA URL REAL -->
+    <meta property="og:type" content="website">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Boda de Verónica & Omar</title>
+    <style>
+        /* Variables de Color - Paleta Premium Editorial */
+        :root {
+            --verde-oscuro: #1E352F;
+            --verde-oliva: #4A614E;
+            --rosa-viejo: #BC8F8F;
+            --dusty-pink: #D4A3A3;
+            --rosa-pastel: #F9EBEB;
+            --blanco-marfil: #FAF8F5;
+            --dorado-sutil: #C5A880;
+            --texto-oscuro: #2C2C2C;
+            --texto-suave: #555555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--blanco-marfil);
+            color: var(--texto-oscuro);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            overflow: hidden; /* Desactiva el scroll hasta el clic inicial */
+        }
+
+        h1, h2, h3, h4, .fecha-boda {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* --- PANTALLA DE BIENVENIDA (Elegante y Limpia) --- */
+        #pantalla-bienvenida {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--verde-oscuro);
+            background-image: linear-gradient(rgba(30, 53, 47, 0.8), rgba(30, 53, 47, 0.85)), 
+                              url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 9999;
+            color: white;
+            padding: 20px;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #pantalla-bienvenida.ocultar {
+            opacity: 0;
+            transform: scale(1.02);
+            pointer-events: none;
+        }
+
+        #pantalla-bienvenida h1 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 300;
+        }
+
+        .btn-ingresar {
+            background-color: var(--dusty-pink);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border: 1px solid var(--dusty-pink);
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .btn-ingresar.cliqueado {
+            background-color: transparent !important;
+            border-color: rgba(255, 255, 255, 0.4) !important;
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+
+        /* --- INDICADOR FLOTANTE SCROLL --- */
+        #indicador-deslizar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #FFFFFF; 
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            mix-blend-mode: difference; 
+            white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+        }
+
+        #indicador-deslizar.mostrar {
+            opacity: 0.9;
+        }
+
+        .flecha-animada {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            margin-top: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* --- PORTADA (HERO PRINCIPAL) --- */
+        .hero-base {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        header {
+            background-image: linear-gradient(rgba(30, 53, 47, 0.5), rgba(30, 53, 47, 0.4)), 
+                              url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920');
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 35px;
+            opacity: 0.9;
+        }
+
+        .fecha-boda {
+            border-top: 1px solid rgba(255,255,255,0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding: 12px 40px;
+            font-size: 1.6rem;
+            letter-spacing: 4px;
+        }
+
+        .texto-invitacion {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 35px;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* --- SECCIÓN NUESTRA HISTORIA --- */
+        .historia-hero {
+            position: relative;
+            max-width: 100%; 
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .carrusel-fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 1;
+        }
+
+        .carrusel-fondo.active {
+            opacity: 1;
+        }
+
+        .historia-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(30, 53, 47, 0.65), rgba(30, 53, 47, 0.55));
+            z-index: 2;
+        }
+
+        .historia-contenido {
+            position: relative;
+            z-index: 3;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .historia-hero h2 {
+            color: white; 
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+
+        .historia-hero h2::after {
+            background-color: var(--dorado-sutil); 
+        }
+
+        .historia-hero p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+        }
+
+        /* --- ESTILOS DE SECCIONES GENERALES --- */
+        section {
+            padding: 100px 20px;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 3rem;
+            color: var(--verde-oscuro);
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: var(--dorado-sutil);
+            margin: 15px auto 0;
+        }
+
+        p.regalos-mensaje, p.introduccion {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            color: var(--texto-suave);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- TARJETAS EDITORIALES (DÓNDE Y CUÁNDO) --- */
+        .detalles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 5px;
+        }
+
+        .tarjeta-evento {
+            background: white;
+            padding: 50px 40px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+            position: relative;
+        }
+
+        .tarjeta-evento h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+        }
+
+        .tarjeta-evento p {
+            font-size: 0.95rem;
+            color: var(--texto-suave);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .tarjeta-evento strong {
+            color: var(--verde-oscuro);
+            font-weight: 500;
+        }
+
+        .boton-mapa {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: var(--dusty-pink);
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .boton-mapa:hover {
+            background-color: var(--verde-oscuro);
+            color: white;
+        }
+
+        /* --- CONTENEDOR DEL VIDEO DE INSTAGRAM --- */
+        .video-instagram-fullwidth {
+            width: 100%;
+            max-width: 440px; 
+            margin: 60px auto 0 auto;
+            background: white;
+            padding: 12px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+        }
+
+        .video-responsive-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 140%; 
+            overflow: hidden;
+            max-height: 620px;
+        }
+
+        .video-responsive-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- CÓDIGO DE VESTIMENTA --- */
+        .vestimenta-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .tarjeta-vestimenta {
+            background: white;
+            padding: 45px 30px;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+        }
+
+        .tarjeta-vestimenta h3 {
+            color: var(--verde-oscuro);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .paleta-colores {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80px;
+        }
+
+        .color-circulo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .color-nombre {
+            font-size: 0.75rem;
+            color: var(--texto-suave);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        /* --- MESA DE REGALOS --- */
+        .cuentas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .tarjeta-cuenta {
+            background: #fff;
+            padding: 40px 30px;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+        }
+
+        .tarjeta-cuenta h4 {
+            color: var(--verde-oscuro);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .tarjeta-cuenta p {
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+            margin-bottom: 6px;
+        }
+
+        /* --- FORMULARIO RSVP --- */
+        .rsvp {
+            background-color: #EAE6DF;
+            border-radius: 0;
+            padding: 80px 40px;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        .rsvp h2::after {
+            background-color: var(--verde-oscuro);
+        }
+
+        .rsvp p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--texto-oscuro);
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 550px;
+            margin: 40px auto 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .condicional-rsvp {
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--verde-oscuro);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 0;
+            font-size: 0.95rem;
+            background-color: white;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--verde-oscuro);
+        }
+
+        .input-acompanante {
+            margin-bottom: 12px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--dusty-pink);
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--verde-oscuro);
+        }
+
+        /* --- REPRODUCTOR DE MÚSICA FLOTANTE --- */
+        .reproductor-musical {
+            position: fixed;
+            bottom: 30px;
+            right: 30px; 
+            z-index: 1000;
+            background: transparent;
+            padding: 0;              
+            border: none;            
+            box-shadow: none;        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .boton-musica {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--verde-oscuro);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s ease, transform 0.3s ease;
+            -webkit-tap-highlight-color: transparent; /* Elimina el cuadro gris nativo en iOS/Android */
+        }
+
+        /* En ordenadores mantendrá el efecto hover */
+        @media (min-width: 769px) {
+            .boton-musica:hover {
+                background-color: var(--dusty-pink);
+                transform: scale(1.05);
+            }
+        }
+
+        /* SOLUCIÓN: Cambia a rosado justo al hacer click/pulsar en celular, y vuelve a su color base al soltarlo */
+        .boton-musica:active {
+            background-color: var(--dusty-pink) !important;
+            transform: scale(0.95);
+        }
+
+        .icon-play, .icon-pause {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .icon-pause { display: none; }
+        .reproductor-musical.reproduciendo .icon-play { display: none; }
+        .reproductor-musical.reproduciendo .icon-pause { display: block; }
+        
+        .reproductor-musical.reproduciendo .boton-musica {
+            animation: pulso-musica 2.5s infinite;
+        }
+
+        @keyframes pulso-musica {
+            0% { box-shadow: 0 0 0 0 rgba(30, 53, 47, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(30, 53, 47, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 53, 47, 0); }
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--verde-oscuro);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        footer p:first-of-type {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            text-transform: none;
+            letter-spacing: 1px;
+        }
+
+        /* Adaptabilidad Móvil Premium */
+        @media (max-width: 768px) {
+            #pantalla-bienvenida h1 { font-size: 2.4rem; letter-spacing: 2px; }
+            header h1 { font-size: 3rem; }
+            header p { font-size: 1.5rem; }
+            .texto-invitacion { font-size: 1.25rem; margin-top: 25px; }
+            .historia-hero h2 { font-size: 2.6rem; }
+            .historia-hero p { font-size: 1.3rem; }
+            h2 { font-size: 2.2rem; }
+            section { padding: 70px 20px; }
+            .tarjeta-evento { padding: 40px 20px; }
+            .rsvp { padding: 50px 20px; }
+            
+            /* Ajustes específicos para teléfonos pequeños en el indicador */
+            #indicador-deslizar {
+                font-size: 0.65rem;
+                letter-spacing: 1.5px;
+                bottom: 25px;
+            }
+        }
+    </style>
+    <!-- Fuentes premium de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ANIMACIÓN PREVIA / PANTALLA DE BIENVENIDA -->
+    <div id="pantalla-bienvenida">
+        <h1>Verónica & Omar</h1>
+        <button class="btn-ingresar" id="btnIngresar">Abrir Invitación</button>
+    </div>
+
+    <!-- REPRODUCTOR LIMPIO -->
+    <div class="reproductor-musical" id="reproductorContainer">
+        <button class="boton-musica" id="btnMusica" title="Reproducir/Pausar música">
+            <svg class="icon-play" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg class="icon-pause" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+        </button>
+        <audio id="audioBoda" loop>
+            <source src="https://res.cloudinary.com/dpswlduf5/video/upload/v1782676129/La-Vie-en-Rose-Remastered_Media_2czFb37Ver0_009_128k_rgdbs3.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <!-- ANIMACIÓN FLOTANTE REPETITIVA -->
+    <div id="indicador-deslizar">
+        <span>Deslizar hacia abajo</span>
+        <svg class="flecha-animada" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+    </div>
+
+    <header class="hero-base">
+        <h1>Verónica & Omar</h1>
+        <p>¡Nos casamos!</p>
+        <div class="fecha-boda">20.08.2026</div>
+        <p class="texto-invitacion">Nos haría muy felices que nos acompañes a celebrar el inicio de este nuevo capítulo juntos.</p>
+    </header>
+
+    <section class="historia-hero hero-base">
+        <div class="carrusel-fondo  active" style="background-image: url('https://res.cloudinary.com/dpswlduf5/image/upload/v1782503007/IMG-20250807-WA0001_qxpbn6.jpg');"></div>
+        <div class="carrusel-fondo" style="background-image: url('https://res.cloudinary.com/dpswlduf5/image/upload/v1782713684/IMG-20260628-WA0010_gjuffk.jpg');"></div>
+        <div class="carrusel-fondo" style="background-image: url('https://res.cloudinary.com/dpswlduf5/image/upload/f_auto,q_auto/IMG-20250807-WA0003_rlq6sp');"></div>
+        <div class="carrusel-fondo" style="background-image: url('https://res.cloudinary.com/dpswlduf5/image/upload/v1782503023/IMG-20250807-WA0007_owkbfs.jpg');"></div>
+        <div class="carrusel-fondo" style="background-image: url('https://res.cloudinary.com/dpswlduf5/image/upload/v1782503618/IMG-20250214-WA0045_phxfnz.jpg');"></div>
+
+        <div class="historia-contenido">
+            <h2>Nuestra Historia</h2>
+            <p>El amor es un viaje que se disfruta mejor juntos. Después de tantos momentos compartidos, risas infinitas y un amor que no para de crecer, hemos decidido dar el paso más importante de nuestras vidas. ¡Y no podemos imaginar este día sin ti!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Dónde & Cuándo</h2>
+        <div class="detalles-container">
+            <div class="tarjeta-evento">
+                <h3>La Ceremonia</h3>
+                <p><strong>Hora:</strong> 3:30 PM</p>
+                <p><strong>Lugar:</strong> Hotel Entre Palmeras</p>
+                <p>Zorritos, Tumbes</p>
+                <a href="https://maps.app.goo.gl/y1sTEZbrV217qANW7" class="boton-mapa" target="_blank">Ver Mapa</a>
+            </div>
+
+            <div class="tarjeta-evento">
+                <h3>La Recepción</h3>
+                <p><strong>Hora:</strong> 5:30 PM</p>
+                <p><strong>Lugar:</strong> Hotel Entre Palmeras</p>
+                <p>Zorritos, Tumbes</p>
+                <a href="https://maps.app.goo.gl/y1sTEZbrV217qANW7" class="boton-mapa" target="_blank">Ver Mapa</a>
+            </div>
+        </div>
+
+        <div class="video-instagram-fullwidth">
+            <div class="video-responsive-container">
+                <iframe 
+                    src="https://www.instagram.com/p/CyDz6cEOHgf/embed/captioned" 
+                    scrolling="no" 
+                    allowtransparency="true" 
+                    allow="encrypted-media">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CÓDIGO DE VESTIMENTA -->
+    <section>
+        <h2>Código de Vestimenta</h2>
+        <p class="regalos-mensaje">
+            En este gran día, nos encantaría contar con tu presencia luciendo vestimenta formal. Con el fin de complementar la armonía y magia del entorno, te sugerimos inspirarte en la siguiente paleta de colores.
+        </p>
+        
+        <div class="vestimenta-container">
+            <!-- Mujeres -->
+            <div class="tarjeta-vestimenta">
+                <h3>Para Mujeres</h3>
+                <div class="paleta-colores">
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #6A1B29;"></div>
+                        <span class="color-nombre">Borgoña</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #D4A3A3;"></div>
+                        <span class="color-nombre">Dusty Rose</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #C36241;"></div>
+                        <span class="color-nombre">Terracota</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #A98467;"></div>
+                        <span class="color-nombre">Café Latte</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #E2CAAA;"></div>
+                        <span class="color-nombre">Arena</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #046342;"></div>
+                        <span class="color-nombre">Verde Esmeralda</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hombres -->
+            <div class="tarjeta-vestimenta">
+                <h3>Para Hombres</h3>
+                <div class="paleta-colores">
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #1D2A44;"></div>
+                        <span class="color-nombre">Azul Marino</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #1C352D;"></div>
+                        <span class="color-nombre">Verde Bosque</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #95A5A6;"></div>
+                        <span class="color-nombre">Gris</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #7A5C43;"></div>
+                        <span class="color-nombre">Marrón Tierra</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circulo" style="background-color: #A98467;"></div>
+                        <span class="color-nombre">Café Latte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MESA DE REGALOS -->
+    <section>
+        <h2>Mesa de regalos</h2>
+        <p class="regalos-mensaje">
+            Tu presencia en nuestro gran día es el mejor regalo que podríamos recibir. Si deseas tener un detalle con nosotros para ayudarnos a comenzar esta nueva etapa, te agradecemos de corazón tu gesto a través de una de las siguientes opciones.
+        </p>
+        
+        <div class="cuentas-grid">
+            <div class="tarjeta-cuenta">
+                <h4>Depósito o Transferencia</h4>
+                <p><strong>Banco BCP:</strong> 0011-0057-0237990286</p>
+                <p><strong>CCI:</strong> 01105700023799028675</p>
+                <p>A nombre de: Omar Melo</p>
+            </div>
+            
+            <div class="tarjeta-cuenta">
+                <h4>Yape o Plin</h4>
+                <p><strong>Número:</strong> +51 927 657 356</p>
+                <p>A nombre de: Omar Melo</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp">
+        <h2>Confirmar Asistencia</h2>
+        <p>Por favor, confírmanos tu asistencia antes del 20 de Julio.</p>
+        
+        <form id="form-rsvp">
+            <div class="form-group">
+                <label for="asistencia">¿Asistirás?</label>
+                <select id="asistencia" name="asistencia" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Sí, ¡ahí estaré!">Sí, ¡ahí estaré!</option>
+                    <option value="Lo siento, no podré ir">Lo siento, no podré ir</option>
+                </select>
+            </div>
+
+            <div id="bloque-asistencia" class="condicional-rsvp">
+                <div class="form-group">
+                    <label for="pases">Número de pases a confirmar</label>
+                    <select id="pases" name="pases">
+                        <option value="1">1 Pase</option>
+                        <option value="2">2 Pases</option>
+                        <option value="3">3 Pases</option>
+                        <option value="4">4 Pases</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nombres y Apellidos de los asistentes:</label>
+                    <div id="contenedor-nombres"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje para los novios (Opcional)</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Algunos buenos deseos?"></textarea>
+            </div>
+
+            <button type="submit">Enviar Confirmación</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Verónica & Omar</p>
+        <p style="margin-top: 15px; font-size: 0.75rem; opacity: 0.6; letter-spacing: 1px;">Hecho con amor para nuestro gran día — 2026</p>
+    </footer>
+
+    <script>
+        // Lógica del Carrusel de Fondo
+        const fondos = document.querySelectorAll('.carrusel-fondo');
+        let indiceActual = 0;
+
+        function cambiarFondo() {
+            fondos[indiceActual].classList.remove('active');
+            indiceActual = (indiceActual + 1) % fondos.length;
+            fondos[indiceActual].classList.add('active');
+        }
+        setInterval(cambiarFondo, 3000);
+
+        // Lógica de Ingreso desde Pantalla de Bienvenida y Activación de Música
+        const pantallaBienvenida = document.getElementById('pantalla-bienvenida');
+        const btnIngresar = document.getElementById('btnIngresar');
+        const audio = document.getElementById('audioBoda');
+        const reproductorContainer = document.getElementById('reproductorContainer');
+        const indicadorDeslizar = document.getElementById('indicador-deslizar');
+        
+        let temporizadorScroll; 
+        let bienvenidaSuperada = false; 
+
+        btnIngresar.addEventListener('click', function() {
+            btnIngresar.classList.add('cliqueado');
+
+            pantallaBienvenida.classList.add('ocultar');
+            document.body.style.overflow = 'auto';
+            bienvenidaSuperada = true;
+            
+            indicadorDeslizar.classList.add('mostrar');
+            reiniciarTemporizadorScroll(); 
+            
+            audio.play().then(() => {
+                reproductorContainer.classList.add('reproduciendo');
+            }).catch(error => {
+                console.log("La reproducción automática falló.");
+            });
+        });
+
+        function reiniciarTemporizadorScroll() {
+            if (!bienvenidaSuperada) return;
+            
+            clearTimeout(temporizadorScroll);
+            temporizadorScroll = setTimeout(function() {
+                if ((window.innerHeight + window.scrollY) < document.documentElement.scrollHeight - 50) {
+                    indicadorDeslizar.classList.add('mostrar');
+                }
+            }, 3000); 
+        }
+
+        window.addEventListener('scroll', function() {
+            if (bienvenidaSuperada) {
+                indicadorDeslizar.classList.remove('mostrar');
+                reiniciarTemporizadorScroll();
+            }
+        });
+
+        // Lógica del Formulario RSVP y WhatsApp
+        const selectAsistencia = document.getElementById('asistencia');
+        const DiagnosticsBloqueAsistencia = document.getElementById('bloque-asistencia');
+        const selectPases = document.getElementById('pases');
+        const contenedorNombres = document.getElementById('contenedor-nombres');
+
+        function actualizarCamposNombres() {
+            contenedorNombres.innerHTML = '';
+            const cantidadPases = parseInt(selectPases.value) || 1;
+
+            for (let i = 1; i <= cantidadPases; i++) {
+                const inputGroup = document.createElement('div');
+                inputGroup.className = 'input-acompanante';
+                
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = `Nombre y Apellido del asistente ${i}`;
+                input.required = true;
+                input.dataset.asistente = i;
+                
+                inputGroup.appendChild(input);
+                contenedorNombres.appendChild(inputGroup);
+            }
+        }
+
+        selectAsistencia.addEventListener('change', function() {
+            if (this.value === "Sí, ¡ahí estaré!") {
+                DiagnosticsBloqueAsistencia.style.display = 'block';
+                actualizarCamposNombres();
+            } else {
+                DiagnosticsBloqueAsistencia.style.display = 'none';
+                contenedorNombres.innerHTML = '';
+            }
+        });
+
+        selectPases.addEventListener('change', actualizarCamposNombres);
+
+        document.getElementById('form-rsvp').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const telefono = "51927657356";
+            const asistencia = selectAsistencia.value;
+            const mensaje = document.getElementById('mensaje').value || "Sin mensaje adicional";
+            
+            let textoMensaje = `¡Hola! Confirmo respuesta para la Boda de Verónica y Omar 💍✨%0A%0A` +
+                               `*¿Asistirá?:* ${asistencia}%0A`;
+
+            if (asistencia === "Sí, ¡ahí estaré!") {
+                const pases = selectPases.value;
+                textoMensaje += `*Pases Confirmados:* ${pases}%0A%0A*Lista de Asistentes:*%0A`;
+                
+                const inputsNombres = contenedorNombres.querySelectorAll('input[type="text"]');
+                inputsNombres.forEach((input, index) => {
+                    textoMensaje += `${index + 1}. ${input.value}%0A`;
+                });
+            }
+
+            textoMensaje += `%0A*Mensaje:* ${mensaje}`;
+
+            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=${textoMensaje}`;
+            window.open(urlWhatsApp, '_blank');
+        });
+
+        // CONTROL DE AUDIO MANUAL
+        const btnMusica = document.getElementById('btnMusica');
+
+        btnMusica.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                reproductorContainer.classList.add('reproduciendo');
+            } else {
+                audio.pause();
+                reproductorContainer.classList.remove('reproduciendo');
+            }
+        });
+    </script>
+
+</body>
+</html>
